@@ -13,7 +13,6 @@ import { fetchApi } from "./api";
 import {
   TablePaginationConfig,
   FilterValue,
-  SorterResult,
   TableCurrentDataSource,
 } from "antd/lib/table/interface";
 import { genderFilter } from "./constants/filter";
@@ -86,6 +85,7 @@ const App: React.FC = () => {
   // Lifecycle
   React.useEffect(() => {
     getUsers();
+    // react-hooks/exhaustive-deps
   }, []);
 
   React.useEffect(() => {
