@@ -1,0 +1,15 @@
+@import '~antd/dist/antd.css';
+
+
+.container {
+    padding: 32px;
+}
+
+.full-width {
+    width: 100% !important;
+}
+
+.label {
+    font-weight: 500;
+    font-size: 16px;
+}
