@@ -85,13 +85,14 @@ const App: React.FC = () => {
   // Lifecycle
   React.useEffect(() => {
     getUsers();
-    // react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   React.useEffect(() => {
     if (readyToFetch) {
       getUsers();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [readyToFetch]);
 
   async function getUsers() {
