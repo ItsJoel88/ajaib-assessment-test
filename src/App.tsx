@@ -83,6 +83,7 @@ const App: React.FC = () => {
     },
   ];
 
+  // Lifecycle
   React.useEffect(() => {
     getUsers();
   }, []);
@@ -131,7 +132,13 @@ const App: React.FC = () => {
         },
       });
     } else if (extra.action === "paginate") {
-      // pagination ??
+      dispatch({
+        type: SET_ATTRIBUTES,
+        value: {
+          readyToFetch: true,
+          page: pagination.current,
+        },
+      });
     }
   }
 
@@ -158,8 +165,15 @@ const App: React.FC = () => {
           <Search
             size="large"
             placeholder="Search"
-            onSearch={onSearch}
             enterButton
+            value={search}
+            onSearch={onSearch}
+            onChange={(ev: React.ChangeEvent<HTMLInputElement>) => {
+              dispatch({
+                type: SET_ATTRIBUTES,
+                value: { search: ev.target.value },
+              });
+            }}
           />
         </Col>
         <Col span={3}>
@@ -186,6 +200,11 @@ const App: React.FC = () => {
       <Row>
         <Col span={24}>
           <Table
+            pagination={{
+              total: 10,
+              defaultCurrent: 1,
+              pageSize: 5,
+            }}
             bordered
             rowKey={(row: any) => row.login.username}
             loading={loading}

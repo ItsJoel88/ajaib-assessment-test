@@ -1,10 +1,5 @@
 import { listsStore } from "./store";
-import {
-  FILTER_LISTS,
-  SET_ATTRIBUTES,
-  SORT_LISTS,
-  RESET_FILTER_LISTS,
-} from "./type";
+import { FILTER_LISTS, SET_ATTRIBUTES, RESET_FILTER_LISTS } from "./type";
 
 import { StoreAction } from "../interfaces";
 

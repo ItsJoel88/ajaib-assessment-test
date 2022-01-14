@@ -13,5 +13,7 @@ export function createParams(payload: any): string {
     });
   }
 
+  queryParams = queryParams !== "?" ? queryParams.slice(0, -1) : queryParams;
+
   return queryParams;
 }

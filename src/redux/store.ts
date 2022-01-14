@@ -9,5 +9,5 @@ export const listsStore = {
   sort_by: "",
   sort_type: "ascend",
   page: 1,
-  pageSize: 10,
+  pageSize: 5,
 };
